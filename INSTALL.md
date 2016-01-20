@@ -16,7 +16,9 @@ Note: This installation in mainly for GNU/Linux distributions.
 
 1. Download Neural Artistic Style:
 
-    $ git clone 
+    ```
+    $ git clone https://github.com/andersbll/neural_artistic_style.git
+    ```
 
 # CUDA
 
@@ -29,7 +31,9 @@ The CUDA toolkit should be installed at `/usr/local/cuda/`.
 1. Download [cuDNN](https://developer.nvidia.com/cudnn) v3.
 1. Extract the tarball file to the CUDA directory:
 
+    ```
     $ sudo tar xzf cudnn-7.0-linux-x64-v3.0-prod.tgz -C /usr/loca/cuda
+    ```
 
 The tarball file consists of libcudnn static and shared object libraries, and
 the library header.
@@ -38,17 +42,22 @@ the library header.
 
 1. Download CUDArray:
 
+    ```
     $ git clone https://github.com/andersbll/cudarray.git
+    ```
 
 1. Build CUDArray:
 
 Before building CUDArray, please make sure Cython>=0.21 has been installed.  If
 not, you can install Cython via Pip:
 
+    ```
     $ pip install --user --upgrade cython
+    ```
 
 Start to build:
 
+    ```
     # Install shared object library
     $ make
     $ sudo make install  # install into /usr/local/lib by default
@@ -57,10 +66,12 @@ Start to build:
 
     # Install Python modules
     $ sudo python setup.py install
+    ```
 
 If you get the error messages when executing `make`, that means you might be
 using cuDNN v4 instead of v3 (Issue #36):
 
+    ```
     src/nnet/cudnn.cpp:206:5: error: cannot convert ‘const float*’ to ‘cudnnConvolutionBwdFilterAlgo_t’ for argument ‘8’ to ‘cudnnStatus_t cudnnConvolutionBackwardFilter(cudnnHandle_t, const void*, cudnnTensorDescriptor_t, const void*, cudnnTensorDescriptor_t, const void*, cudnnConvolutionDescriptor_t, cudnnConvolutionBwdFilterAlgo_t, void*, size_t, const void*, cudnnFilterDescriptor_t, void*)’
          ));
          ^
@@ -69,6 +80,7 @@ using cuDNN v4 instead of v3 (Issue #36):
  
     compilation terminated due to -Wfatal-errors.
     make: *** [src/nnet/cudnn.o] Error 1
+    ```
                                                                                                                                          
 https://github.com/andersbll/cudarray/issues/36
 
@@ -76,18 +88,24 @@ https://github.com/andersbll/cudarray/issues/36
 
 1. Download DeepPy:
 
+    ```
     $ git clone https://github.com/andersbll/deeppy.git
+    ```
 
 1. Copy the `deeppy` module direcotry into the Neural Artistic Style directory:
 
+    ```
     $ cp -a deeppy/deeppy neural_artistic_style
+    ```
 
 # Pretrained VGG 19 Model
 
 1. Download the pretrained VGG 19 model:
 
+    ```
     $ cd neural_artistic_style
     $ wget http://www.vlfeat.org/matconvnet/models/imagenet-vgg-verydeep-19.mat
+    ```
 
 The model size is around 510 MB.
 
@@ -98,6 +116,7 @@ The model size is around 510 MB.
 If you get the out of memory error messages when executing
 neural_artistic_style.py (Issue #26):
 
+    ```
     Traceback (most recent call last):
       File "neural_artistic_style.py", line 138, in <module>
         run()
@@ -116,6 +135,7 @@ neural_artistic_style.py (Issue #26):
       File "cudarray/wrap/array_data.pyx", line 16, in cudarray.wrap.array_data.ArrayData.__init__ (./cudarray/wrap/array_data.cpp:1401)
       File "cudarray/wrap/cudart.pyx", line 12, in cudarray.wrap.cudart.cudaCheck (./cudarray/wrap/cudart.cpp:763)
     ValueError: out of memory
+    ```
                                                                                                                                          
 Here are some solutions:
 
