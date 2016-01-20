@@ -69,7 +69,7 @@ The CUDA toolkit should be installed at `/usr/local/cuda/`.
     ```
 
    If you get the error messages when executing `make`, that means you might be
-   using cuDNN v4 instead of v3 (Issue #36):
+   using cuDNN v4 instead of v3 (Issue [#36](https://github.com/andersbll/cudarray/issues/36)):
 
     ```
     src/nnet/cudnn.cpp:206:5: error: cannot convert ‘const float*’ to ‘cudnnConvolutionBwdFilterAlgo_t’ for argument ‘8’ to ‘cudnnStatus_t cudnnConvolutionBackwardFilter(cudnnHandle_t, const void*, cudnnTensorDescriptor_t, const void*, cudnnTensorDescriptor_t, const void*, cudnnConvolutionDescriptor_t, cudnnConvolutionBwdFilterAlgo_t, void*, size_t, const void*, cudnnFilterDescriptor_t, void*)’
@@ -112,7 +112,7 @@ The model size is around 510 MB.
 ## Out of Memory Issue
 
 If you get the out of memory error messages when executing
-neural_artistic_style.py (Issue #26):
+neural_artistic_style.py (Issue [#26](https://github.com/andersbll/neural_artistic_style/issues/26)):
 
     ```
     Traceback (most recent call last):
