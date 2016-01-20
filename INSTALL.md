@@ -139,4 +139,4 @@ Here are some solutions:
 
  1. Use GPU with larger memory.
  1. Use smaller input and style images.
- 1. Use CPU instead of GPU.  Set CUDARRAY_BACKEND to 'numpy' as workaround.
+ 1. Use CPU instead of GPU.  Set `CUDARRAY_BACKEND` to 'numpy' as workaround.
