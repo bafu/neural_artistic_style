@@ -35,8 +35,8 @@ The CUDA toolkit should be installed at `/usr/local/cuda/`.
     $ sudo tar xzf cudnn-7.0-linux-x64-v3.0-prod.tgz -C /usr/loca/cuda
     ```
 
-The tarball file consists of libcudnn static and shared object libraries, and
-the library header.
+   The tarball file consists of libcudnn static and shared object libraries, and
+   the library header.
 
 # CUDArray
 
@@ -48,14 +48,14 @@ the library header.
 
 1. Build CUDArray:
 
-Before building CUDArray, please make sure Cython>=0.21 has been installed.  If
-not, you can install Cython via Pip:
+   Before building CUDArray, please make sure Cython>=0.21 has been installed.  If
+   not, you can install Cython via Pip:
 
     ```
     $ pip install --user --upgrade cython
     ```
 
-Start to build:
+   Start to build:
 
     ```
     # Install shared object library
@@ -68,8 +68,8 @@ Start to build:
     $ sudo python setup.py install
     ```
 
-If you get the error messages when executing `make`, that means you might be
-using cuDNN v4 instead of v3 (Issue #36):
+   If you get the error messages when executing `make`, that means you might be
+   using cuDNN v4 instead of v3 (Issue #36):
 
     ```
     src/nnet/cudnn.cpp:206:5: error: cannot convert ‘const float*’ to ‘cudnnConvolutionBwdFilterAlgo_t’ for argument ‘8’ to ‘cudnnStatus_t cudnnConvolutionBackwardFilter(cudnnHandle_t, const void*, cudnnTensorDescriptor_t, const void*, cudnnTensorDescriptor_t, const void*, cudnnConvolutionDescriptor_t, cudnnConvolutionBwdFilterAlgo_t, void*, size_t, const void*, cudnnFilterDescriptor_t, void*)’
@@ -81,8 +81,6 @@ using cuDNN v4 instead of v3 (Issue #36):
     compilation terminated due to -Wfatal-errors.
     make: *** [src/nnet/cudnn.o] Error 1
     ```
-                                                                                                                                         
-https://github.com/andersbll/cudarray/issues/36
 
 # DeepPy
 
@@ -142,5 +140,3 @@ Here are some solutions:
  1. Use GPU with larger memory.
  1. Use smaller input and style images.
  1. Use CPU instead of GPU.  Set CUDARRAY_BACKEND to 'numpy' as workaround.
-
-https://github.com/andersbll/neural_artistic_style/issues/26
