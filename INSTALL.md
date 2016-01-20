@@ -61,7 +61,7 @@ The CUDA toolkit should be installed at `/usr/local/cuda/`.
     # Install shared object library
     $ make
     $ sudo make install  # install into /usr/local/lib by default
-    $ echo "export LD_LIBRARY_PATH=\"/usr/local/lib:$LD_LIBRARY_PATH\"" >> $HOME/.bashrc
+    $ echo "export LD_LIBRARY_PATH=\"/usr/local/lib:\$LD_LIBRARY_PATH\"" >> $HOME/.bashrc
     $ source $HOME/.bashrc
 
     # Install Python modules
