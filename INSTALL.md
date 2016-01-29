@@ -32,7 +32,7 @@ The CUDA toolkit should be installed at `/usr/local/cuda/`.
 1. Extract the tarball file to the CUDA directory:
 
     ```
-    $ sudo tar xzf cudnn-7.0-linux-x64-v3.0-prod.tgz -C /usr/loca/cuda
+    $ sudo tar xzf cudnn-7.0-linux-x64-v3.0-prod.tgz -C /usr/local
     ```
 
    The tarball file consists of libcudnn static and shared object libraries, and
